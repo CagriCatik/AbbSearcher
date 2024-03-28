@@ -1,46 +1,63 @@
-
 # AbbSearcher
 
-This is a simple tool (`AbbSearcher`) built with Python using the Tkinter library for creating a graphical user interface (GUI). The purpose of this tool is to search for and display descriptions associated with abbreviations stored in a local CSV or XLSX file.
-
-## Usage
-
-1. **Run the Application:**
-
-   - Execute the code in a Python environment to launch the `AbbSearcher` application.
-2. **Enter Abbreviation:**
-
-   - Type an abbreviation into the entry field labeled "Enter an abbreviation."
-3. **Search:**
-
-   - Press the "Search" button or press Enter to initiate the search.
-4. **View Results:**
-
-   - The tool will display the corresponding descriptions for the entered abbreviation in the text area below.
+`AbbSearcher` is a simple Python application built using the Tkinter library for creating a graphical user interface (GUI) to search and visualize information from an Excel file containing abbreviations and their descriptions.
 
 ## Features
 
-- **Autocomplete:**
+* **Search Abbreviations** : Enter an abbreviation in the search box to retrieve its corresponding descriptions.
+* **Detailed Description** : View a detailed description of an abbreviation in a separate window.
+* **Statistics & Plot** : Generate and display statistics on the distribution of abbreviations across different starting letters along with a corresponding plot.
 
-  - The abbreviation entry field supports autocomplete functionality, suggesting existing abbreviations as you type.
-- **Multiple Descriptions:**
+## Installation
 
-  - If an abbreviation has multiple associated descriptions, they will be displayed sequentially in the results.
-- **Error Handling:**
+1. Clone the repository to your local machine:
 
-  - The tool attempts to read the provided XLSX file first and falls back to CSV if unsuccessful. Any errors encountered during the file reading process are displayed in the console.
+```sh
+  git clone https://github.com/CagriCatik/AbbSearcher/tree/main
+```
 
-## File Format
+2. Navigate to the project directory:
 
-- The tool supports both XLSX and CSV file formats.
+```sh
+  cd AbbSearcher
+```
 
-## Dependencies
+3. Install the required dependencies:
 
-- The following Python libraries are required:
-  - `tkinter` for GUI
-  - `openpyxl` for XLSX file handling
+```sh
+  pip install openpyxl matplotlib
+```
 
-## File Path
+## Usage
 
-- The default file path for the local CSV or XLSX file is set to "AbbList.xlsx". Modify the `dateipfad` variable to point to your desired file.
+Run the application by executing the following command in your terminal:
 
+```sh
+  python main.py
+```
+
+The GUI will open, allowing you to search for abbreviations, view detailed descriptions, and generate statistics.
+
+## Instructions
+
+1. **Search Tab** :
+
+* Enter an abbreviation in the search box.
+* Press "Search" to retrieve corresponding descriptions.
+* The detailed description will automatically appear in a new window.
+
+1. **Statistics & Plot Tab** :
+
+* Click on "Show Statistics & Plot" to view a statistical analysis and plot of the abbreviations.
+
+1. **Autocomplete** :
+
+* The search box supports autocomplete for easier abbreviation input.
+
+1. **Warning** :
+
+* If no data is available for the plot, a warning message will be displayed.
+
+## Excel File Format
+
+The application assumes that the Excel file (`AbbList.xlsx`) contains sheets for each alphabet letter, with three columns: `Abbreviation`, `Description`, and `Detailed Description`.
